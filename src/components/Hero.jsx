@@ -248,54 +248,43 @@ export default function Hero() {
               />
             </div>
 
-            {/* Industrial image placeholder with angular engineering mask */}
+            {/* Industrial image with angular engineering mask */}
             <div
               style={{
                 width: '100%',
                 maxWidth: '380px',
                 height: '240px',
-                backgroundColor: 'var(--bg-secondary)',
                 border: '1px solid var(--border-color)',
                 clipPath: 'polygon(12% 0, 100% 0, 100% 88%, 88% 100%, 0 100%, 0 12%)',
                 position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '2rem',
-                textAlign: 'center',
                 boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)',
               }}
             >
+              <img
+                src="/hero_skyline.png"
+                alt="NTS Engineering Skyline"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
               <div
                 style={{
                   position: 'absolute',
                   top: '10px',
-                  left: '10px',
-                  fontSize: '0.65rem',
+                  left: '15px',
+                  fontSize: '0.6rem',
                   fontFamily: 'monospace',
-                  color: 'var(--text-muted)',
+                  color: '#ffffff',
+                  backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                  padding: '0.15rem 0.4rem',
+                  borderRadius: '2px',
+                  letterSpacing: '0.05em',
                 }}
               >
-                MASKSPEC // NTS-01-HERO
+                SPEC // NTS-01-HERO
               </div>
-              <p style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                [Hero: Skyline & Fire Protection Cinematic Shot]
-              </p>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                Aspect Ratio: 16:10 · Clean light overlay overlaying mechanical steel structures.
-              </p>
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '10px',
-                  right: '10px',
-                  width: '15px',
-                  height: '15px',
-                  borderRight: '1px solid var(--text-muted)',
-                  borderBottom: '1px solid var(--text-muted)',
-                }}
-              />
             </div>
           </div>
         </div>
