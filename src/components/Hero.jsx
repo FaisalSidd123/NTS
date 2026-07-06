@@ -32,10 +32,10 @@ export default function Hero() {
 
   // 4 Diamonds assembly coordinates
   const diamondVariants = {
-    hiddenTop: { opacity: 0, y: -40, rotate: 45 },
-    hiddenBottom: { opacity: 0, y: 40, rotate: 45 },
-    hiddenLeft: { opacity: 0, x: -40, rotate: 45 },
-    hiddenRight: { opacity: 0, x: 40, rotate: 45 },
+    hiddenTop: { opacity: 0, y: -80, rotate: 45 },
+    hiddenBottom: { opacity: 0, y: 80, rotate: 45 },
+    hiddenLeft: { opacity: 0, x: -80, rotate: 45 },
+    hiddenRight: { opacity: 0, x: 80, rotate: 45 },
     visible: {
       opacity: 1,
       x: 0,
@@ -162,102 +162,45 @@ export default function Hero() {
 
           {/* Graphical/Visual Column */}
           <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }} className="hero-graphic-col">
-            {/* Assembling Diamond Logo Animation */}
-            <div
+            {/* Corporate Nexus Logo Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                position: 'relative',
-                width: '180px',
-                height: '180px',
+                width: '100%',
+                maxWidth: '380px',
+                backgroundColor: '#ffffff',
+                border: '1px solid var(--border-color)',
+                padding: '2.5rem 2rem',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                boxShadow: '0 8px 24px rgba(15, 23, 42, 0.02)',
               }}
             >
-              {/* Top Diamond (Fire Fighting - Orange) */}
-              <motion.div
-                variants={diamondVariants}
-                initial="hiddenTop"
-                animate="visible"
+              <img
+                src="/nexus logo.png"
+                alt="Nexus Technical Solutions"
                 style={{
-                  position: 'absolute',
-                  top: '15px',
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'var(--color-pillar-1)',
-                  borderRadius: '4px',
-                }}
-                title="Fire Fighting"
-              />
-              {/* Left Diamond (Fire Suppression - Signal Red) */}
-              <motion.div
-                variants={diamondVariants}
-                initial="hiddenLeft"
-                animate="visible"
-                style={{
-                  position: 'absolute',
-                  left: '15px',
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'var(--color-pillar-2)',
-                  borderRadius: '4px',
-                }}
-                title="Fire Suppression"
-              />
-              {/* Right Diamond (Pumps & Water - Ice Blue) */}
-              <motion.div
-                variants={diamondVariants}
-                initial="hiddenRight"
-                animate="visible"
-                style={{
-                  position: 'absolute',
-                  right: '15px',
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'var(--color-pillar-4)',
-                  borderRadius: '4px',
-                }}
-                title="Pumps & Water Systems"
-              />
-              {/* Bottom Diamond (Detection & Alarm - Amber) */}
-              <motion.div
-                variants={diamondVariants}
-                initial="hiddenBottom"
-                animate="visible"
-                style={{
-                  position: 'absolute',
-                  bottom: '15px',
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'var(--color-pillar-3)',
-                  borderRadius: '4px',
-                }}
-                title="Detection & Alarm"
-              />
-
-              {/* Core Connecting Mark */}
-              <div
-                style={{
-                  position: 'absolute',
-                  width: '20px',
-                  height: '20px',
-                  backgroundColor: '#ffffff',
-                  transform: 'rotate(45deg)',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.05)',
-                  zIndex: 2,
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '120px',
+                  objectFit: 'contain',
                 }}
               />
-            </div>
+            </motion.div>
 
             {/* Industrial image with angular engineering mask */}
             <div
               style={{
                 width: '100%',
                 maxWidth: '380px',
-                height: '240px',
+                height: '220px',
                 border: '1px solid var(--border-color)',
                 clipPath: 'polygon(12% 0, 100% 0, 100% 88%, 88% 100%, 0 100%, 0 12%)',
                 position: 'relative',
-                boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)',
+                boxShadow: '0 8px 24px rgba(15, 23, 42, 0.02)',
               }}
             >
               <img
