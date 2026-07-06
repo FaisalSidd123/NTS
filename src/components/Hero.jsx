@@ -161,73 +161,77 @@ export default function Hero() {
           </motion.div>
 
           {/* Graphical/Visual Column */}
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }} className="hero-graphic-col">
-            {/* Corporate Nexus Logo Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justify: 'center' }} className="hero-graphic-col">
+            {/* Branded circular medallion frame */}
+            <div
               style={{
-                width: '100%',
-                maxWidth: '380px',
-                backgroundColor: '#ffffff',
-                border: '1px solid var(--border-color)',
-                padding: '2.5rem 2rem',
+                position: 'relative',
+                width: 'clamp(280px, 25vw, 360px)',
+                height: 'clamp(280px, 25vw, 360px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 8px 24px rgba(15, 23, 42, 0.02)',
               }}
             >
-              <img
-                src="/nexus logo.png"
-                alt="Nexus Technical Solutions"
+              {/* Rotating outer technical ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
                 style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '120px',
-                  objectFit: 'contain',
-                }}
-              />
-            </motion.div>
-
-            {/* Industrial image with angular engineering mask */}
-            <div
-              style={{
-                width: '100%',
-                maxWidth: '380px',
-                height: '220px',
-                border: '1px solid var(--border-color)',
-                clipPath: 'polygon(12% 0, 100% 0, 100% 88%, 88% 100%, 0 100%, 0 12%)',
-                position: 'relative',
-                boxShadow: '0 8px 24px rgba(15, 23, 42, 0.02)',
-              }}
-            >
-              <img
-                src="/hero_skyline.png"
-                alt="NTS Engineering Skyline"
-                style={{
+                  position: 'absolute',
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  borderRadius: '50%',
+                  border: '1px dashed var(--color-pillar-4)',
+                  opacity: 0.5,
                 }}
               />
+
+              {/* Middle thin border ring */}
               <div
                 style={{
                   position: 'absolute',
-                  top: '10px',
-                  left: '15px',
-                  fontSize: '0.6rem',
-                  fontFamily: 'monospace',
-                  color: '#ffffff',
-                  backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                  padding: '0.15rem 0.4rem',
-                  borderRadius: '2px',
-                  letterSpacing: '0.05em',
+                  width: '92%',
+                  height: '92%',
+                  borderRadius: '50%',
+                  border: '1px solid var(--border-color)',
+                }}
+              />
+
+              {/* Solid inner white circle */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  position: 'absolute',
+                  width: '84%',
+                  height: '84%',
+                  borderRadius: '50%',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid var(--border-color)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '2rem',
+                  boxShadow: '0 10px 30px rgba(15, 23, 42, 0.03)',
+                  zIndex: 2,
                 }}
               >
-                SPEC // NTS-01-HERO
-              </div>
+                <img
+                  src="/nexus logo.png"
+                  alt="Nexus Technical Solutions"
+                  style={{
+                    width: '85%',
+                    height: 'auto',
+                    objectFit: 'contain',
+                  }}
+                />
+              </motion.div>
+
+              {/* Compass tick indicators (blueprint style) */}
+              <div style={{ position: 'absolute', top: 0, bottom: 0, left: '50%', width: '1px', borderLeft: '1px dashed rgba(15, 23, 42, 0.1)', height: '100%', pointerEvents: 'none' }}></div>
+              <div style={{ position: 'absolute', left: 0, right: 0, top: '50%', height: '1px', borderTop: '1px dashed rgba(15, 23, 42, 0.1)', width: '100%', pointerEvents: 'none' }}></div>
             </div>
           </div>
         </div>
