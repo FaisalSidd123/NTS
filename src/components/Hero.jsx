@@ -166,8 +166,8 @@ export default function Hero() {
             <div
               style={{
                 position: 'relative',
-                width: 'clamp(280px, 25vw, 360px)',
-                height: 'clamp(280px, 25vw, 360px)',
+                width: 'clamp(340px, 35vw, 440px)',
+                height: 'clamp(340px, 35vw, 440px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
