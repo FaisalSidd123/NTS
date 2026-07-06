@@ -1,0 +1,275 @@
+/* Custom Google Fonts are loaded in index.html */
+
+:root {
+  /* Color Palette - Clean, Professional White/Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  
+  --text-primary: #0f172a;   /* Slate 900 */
+  --text-secondary: #334155; /* Slate 700 */
+  --text-muted: #64748b;     /* Slate 500 */
+  
+  --border-color: #e2e8f0;   /* Slate 200 */
+  --border-subtle: #f1f5f9;  /* Slate 100 */
+  
+  /* Brand Accent Default (NTS Premium Navy/Slate) */
+  --accent-primary: #0f172a;
+  --accent-hover: #1e293b;
+  
+  /* The Four Pillars Accent Colors (Sparing & Purposeful usage) */
+  --color-pillar-1: #ea580c; /* Fire Fighting: Ember Orange/Red */
+  --color-pillar-1-light: #fff5f1;
+  --color-pillar-2: #dc2626; /* Fire Suppression: Signal Red */
+  --color-pillar-2-light: #fef2f2;
+  --color-pillar-3: #b45309; /* Detection & Alarm: High-legibility Amber */
+  --color-pillar-3-light: #fffbeb;
+  --color-pillar-4: #0284c7; /* Pumps & Water: Ice Blue */
+  --color-pillar-4-light: #f0f9ff;
+
+  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--sans);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* Override boilerplate container structure */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-inline: none !important;
+  text-align: left !important;
+  min-height: 100vh;
+  display: block !important;
+}
+
+/* CSS Infinite Marquee (High Performance) */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 2.5rem;
+  animation: scroll-marquee 40s linear infinite;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-item {
+  font-family: var(--heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.marquee-divider {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-pillar-1);
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* Custom Scrollbar for Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Technical grid / dossier lines */
+.dossier-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+.dossier-line-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--border-color);
+}
+
+.dossier-line-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* Button Component Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--accent-primary);
+  border-radius: 0px; /* Industrial geometric feel */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent-primary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+/* Pillar Specific Colors styling */
+.pillar-card {
+  border-top: 4px solid var(--accent-primary);
+}
+.pillar-card.p1 { border-top-color: var(--color-pillar-1); }
+.pillar-card.p2 { border-top-color: var(--color-pillar-2); }
+.pillar-card.p3 { border-top-color: var(--color-pillar-3); }
+.pillar-card.p4 { border-top-color: var(--color-pillar-4); }
+
+.bg-pillar-1 { background-color: var(--color-pillar-1-light); }
+.bg-pillar-2 { background-color: var(--color-pillar-2-light); }
+.bg-pillar-3 { background-color: var(--color-pillar-3-light); }
+.bg-pillar-4 { background-color: var(--color-pillar-4-light); }
+
+.text-pillar-1 { color: var(--color-pillar-1); }
+.text-pillar-2 { color: var(--color-pillar-2); }
+.text-pillar-3 { color: var(--color-pillar-3); }
+.text-pillar-4 { color: var(--color-pillar-4); }
