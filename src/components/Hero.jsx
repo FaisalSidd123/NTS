@@ -64,7 +64,7 @@ export default function Hero() {
       className="dossier-grid"
     >
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem', alignItems: 'center' }} className="hero-grid">
+        <div className="hero-grid">
           {/* Text Content */}
           <motion.div
             variants={containerVariants}
@@ -166,8 +166,8 @@ export default function Hero() {
             <div
               style={{
                 position: 'relative',
-                width: 'clamp(340px, 35vw, 440px)',
-                height: 'clamp(340px, 35vw, 440px)',
+                width: 'clamp(260px, 35vw, 440px)',
+                height: 'clamp(260px, 35vw, 440px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
